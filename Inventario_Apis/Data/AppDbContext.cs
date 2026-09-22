@@ -23,6 +23,7 @@ namespace Inventario_Apis.Data
             modelBuilder.Entity<Categoria>().HasKey(c => c.IdCategoria);
             modelBuilder.Entity<Producto>().HasKey(p => p.IdProducto);
             modelBuilder.Entity<Cliente>().HasKey(c => c.IdCliente);
+            //modelBuilder.Entity<Cliente>().HasKey(U => U.IdCliente);
            
         }
 

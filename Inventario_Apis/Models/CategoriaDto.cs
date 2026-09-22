@@ -7,5 +7,10 @@
             public string NombreCategoria { get; set; } = string.Empty;
         }
 
+    public class InsertarCategoria
+    {
+
+        public string NombreCategoria { get; set; }
+    }
    
 }

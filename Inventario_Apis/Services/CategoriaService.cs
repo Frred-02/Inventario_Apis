@@ -28,6 +28,17 @@ namespace Inventario_Apis.Services
             NombreCategoria = c.NombreCategoria
         };
 
+        public async Task<CategoriaResponseDto>CrearCategoria(InsertarCategoria dto)
+        {
+            if (string.IsNullOrWhiteSpace(dto.NombreCategoria))
+                throw new ArgumentException("Ingresar Nombre");
+
+            var categoria = new Categoria { NombreCategoria = dto.NombreCategoria.Trim() };
+            await _repo.CrearCategoria(categoria);
+            return new CategoriaResponseDto { NombreCategoria = categoria.NombreCategoria };
+
+        }
+
 
     }
 }

@@ -5,6 +5,6 @@ namespace Inventario_Apis.Interfaces
     public interface ICategoriaRepository
     {
         Task<IEnumerable<Categoria>> ListaCategoria();
-
+        Task CrearCategoria(Categoria categoria);
     }
 }

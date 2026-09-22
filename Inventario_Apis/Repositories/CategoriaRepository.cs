@@ -23,6 +23,11 @@ namespace Inventario_Apis.Repositories
                 .ToListAsync();
         }
 
+        public async Task CrearCategoria(Categoria categoria)
+        {
+            await _context.Database.ExecuteSqlRawAsync("EXEC sp_AgregarCategoria @NombreCategoria ={0}",
+                categoria.NombreCategoria);
+        }
 
 
 
