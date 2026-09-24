@@ -1,4 +1,5 @@
 ﻿using Inventario_Apis.Interfaces;
+using Inventario_Apis.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,5 +21,22 @@ namespace Inventario_Apis.Controllers
             return Ok(producto);
 
         }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Crear([FromBody]InsertarProducto dto)
+        {
+            try
+            {
+                var producto = await _service.CrearProducto(dto);
+                return Ok(producto);    
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, ex.Message);
+            }
+        }
+
     }
 }

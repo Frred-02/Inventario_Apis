@@ -4,6 +4,7 @@ namespace Inventario_Apis.Interfaces
 {
     public interface IProductoService
     {
-        Task<List<CrearProductoReponseDto>> ListaProducto();
+        Task<List<ProductoReponseDto>> ListaProducto();
+        Task<ProductoReponseDto> CrearProducto(InsertarProducto producto);
     }
 }

@@ -22,5 +22,14 @@ namespace Inventario_Apis.Repositories
                 .ToListAsync();
         }
 
+        public async Task CrearCliente(Cliente cliente)
+        
+        {
+            await _context.Database.ExecuteSqlRawAsync("EXEC sp_AgregarCliente @NombreCliente ={0}, @ApellidoCliente ={1}, @Telefono ={2}", cliente.NombreCliente,
+                
+                cliente.ApellidoCliente, cliente.Telefono);
+
+        }
+
     }
 }

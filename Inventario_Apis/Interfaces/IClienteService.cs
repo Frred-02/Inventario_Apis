@@ -6,6 +6,6 @@ namespace Inventario_Apis.Interfaces
     {
 
         Task<List<ClienteReponseDto>> ListaCliente();
-
+        Task<ClienteReponseDto> CrearCliente(InsertarCliente dto);
     }
 }

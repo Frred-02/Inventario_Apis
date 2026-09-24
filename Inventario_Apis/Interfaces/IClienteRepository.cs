@@ -5,6 +5,7 @@ namespace Inventario_Apis.Interfaces
     public interface IClienteRepository
     {
         Task<IEnumerable<Cliente>> ListaCliente();
+        Task CrearCliente(Cliente cliente);
       
 
 

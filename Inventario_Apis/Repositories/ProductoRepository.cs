@@ -23,6 +23,14 @@ namespace Inventario_Apis.Repositories
                 .FromSqlRaw("EXEC  sp_listaProductos")
                 .ToListAsync();
         }
+
+        public async Task CrearProducto(Producto producto)
+        {
+            await _context.Database.ExecuteSqlRawAsync("EXEC sp_AgregrarProducto @NombreProducto ={0}, @IdCategoria ={1}", 
+                producto.NombreProducto, producto.IdCategoria );
+        }
     }
+
+    
 
 }

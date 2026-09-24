@@ -19,6 +19,19 @@ namespace Inventario_Apis.Services
         }
 
 
+        public async Task<ClienteReponseDto>CrearCliente(InsertarCliente dto)
+        {
+
+            var cliente = new Cliente { NombreCliente = dto.NombreCliente.Trim(), ApellidoCliente = dto.ApellidoCliente.Trim(),
+            Telefono =dto.Telefono.Trim()};
+            await _clienteRepository.CrearCliente(cliente);
+            return new ClienteReponseDto { NombreCliente = cliente.NombreCliente, ApellidoCliente = cliente.ApellidoCliente,
+            Telefono = cliente.Telefono};
+              
+
+        }
+
+
         private static ClienteReponseDto MapToDto(Cliente c) => new()
         {
             IdCliente = c.IdCliente,
