@@ -28,6 +28,7 @@ namespace Inventario_Apis.Services
             IdProducto = p.IdProducto,
             NombreProducto = p.NombreProducto,
             IdCategoria = p.IdCategoria,
+            NombreCategoria = p.NombreCategoria,
 
         };
 

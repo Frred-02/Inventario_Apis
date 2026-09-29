@@ -13,6 +13,7 @@ namespace Inventario_Apis.Data
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Venta> Ventas { get; set; }    
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,7 +24,7 @@ namespace Inventario_Apis.Data
             modelBuilder.Entity<Categoria>().HasKey(c => c.IdCategoria);
             modelBuilder.Entity<Producto>().HasKey(p => p.IdProducto);
             modelBuilder.Entity<Cliente>().HasKey(c => c.IdCliente);
-            //modelBuilder.Entity<Cliente>().HasKey(U => U.IdCliente);
+            modelBuilder.Entity<Venta>().HasKey(v => v.IdVenta);
            
         }
 
